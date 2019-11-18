@@ -1,5 +1,4 @@
 import api from '../api'
-import axios from 'axios'
 import lsh from '../helpers/localStorageHelper'
 
 const state = {
@@ -20,7 +19,7 @@ const actions = {
     })
   },
   rateMovie({ commit }, payload) {
-    return api.rateMovie(payload.id, payload.rating).then((response) => {
+    return api.rateMovie(payload.id, payload.rating).then(() => {
       commit('appendRating', payload.id)
     }).catch((errors) => {
       commit('setError', errors)
