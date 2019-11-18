@@ -18,7 +18,10 @@
         <div class="movie-description">
           <h2>{{ details.original_title }}</h2>
           <div class="tags are-small">
-            <span v-for="genre in details.genres" :class="'tag is-light'">
+            <span
+              v-for="genre in details.genres"
+              :key="genre"
+              :class="'tag is-light'">
               {{ genre.name }}
             </span>&nbsp;
           </div>
